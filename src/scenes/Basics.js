@@ -59,24 +59,29 @@ class Basics extends Phaser.Scene {
             tweens: [{
                 x: w - 64,
                 alpha: 0.5,
-                duration: 500
+                duration: 500,
+                angle: 90
             }, {
                 y: h - 64,
                 duration: 1000,
-                ease: 'Sine.easeOut'
+                ease: 'Sine.easeOut',
+                angle: 180
             }, {
                 x: 64,
                 alpha: 1,
-                duration: 1500
+                duration: 1500,
+                angle: -90
             }, {
                 y: 64,
-                duration: 1000
+                duration: 1000,
+                angle: 0
             }]
         });
 
         // add mouse input listener to start tween chain
         this.input.on('pointerdown', () => {
             pearygood.setPosition(64, 64);
+            pearygood.setAngle(0);
             pearTween.restart();
         });
 
